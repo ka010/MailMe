@@ -29,8 +29,7 @@ class MainHandler(webapp.RequestHandler):
       jsonString = self.request.body
       msg = json.loads(jsonString)      
       
-      # change sender to an email that is registered to
-      # a gae admin for this application
+      # change sender to an email that is registered to a admin for this application
       mail.send_mail(sender="ADMIN@YOURAPP.com",
                       to=msg.get('to'),
                       subject=msg.get('subject'),
